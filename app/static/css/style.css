@@ -1,0 +1,192 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', 'Segoe UI', sans-serif;
+  background-color: #080808;
+  color: #ffffff;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.main-wrapper {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.container {
+  text-align: center;
+  max-width: 600px;
+  padding: 40px;
+  background-color: rgba(255, 255, 255, 0.02);
+  border-radius: 28px;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.05);
+  transition: all 0.3s ease-in-out;
+}
+
+h1 {
+  font-size: 2rem;
+  margin-bottom: 12px;
+  font-weight: 600;
+}
+
+p {
+  font-size: 1rem;
+  color: #ccc;
+  margin-bottom: 32px;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  background-color: rgba(0, 0, 0, 0.2); /* Fundo transparente sutil */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 100;
+  backdrop-filter: blur(8px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.logo-flush {
+  height: 150px; /* Ajuste para manter a proporção sem ocupar muito espaço */
+  display: block;
+}
+
+
+.upload-btn {
+  background-color: #FF023E;
+  color: white;
+  border: 2px solid #FF023E;
+  padding: 14px 24px;
+  font-size: 1rem;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.upload-btn:hover {
+  background-color: transparent;
+  color: #FF023E;
+}
+
+input[type="file"] {
+  display: none;
+}
+
+.filename {
+  margin-top: 16px;
+  font-size: 0.9rem;
+  color: #bbb;
+  word-break: break-word;
+}
+
+.loader-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 32px;
+}
+
+.loading-text {
+  font-size: 1.2rem;
+  color: #ffffff;
+  opacity: 0.9;
+  transition: all 0.3s ease;
+}
+
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeSlideIn 0.6s ease-out forwards;
+}
+
+@keyframes fadeSlideIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.dashboard-wrapper {
+  padding: 40px;
+  width: 100%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.dashboard-title {
+  font-size: 2rem;
+  font-weight: 600;
+  margin-bottom: 40px;
+  color: white;
+  text-align: center;
+}
+
+.metrics-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 24px;
+}
+
+.metric-card {
+  background-color: #0e0e0e;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 20px;
+  padding: 24px;
+  text-align: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.03);
+}
+
+.metric-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 0 16px rgba(255, 255, 255, 0.06);
+}
+
+.metric-label {
+  font-size: 0.9rem;
+  color: #ccc;
+  margin-bottom: 12px;
+}
+
+.metric-value {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #FF023E;
+}
+
+.loader {
+  --s: 64px;
+  width: var(--s);
+  aspect-ratio: 2;
+  --_g: #FF023E 90%,#0000;
+  background: 
+    radial-gradient(farthest-side,var(--_g)) 0   50%/25% 50%,
+    radial-gradient(farthest-side at bottom,var(--_g)) 50%  calc(50% - var(--s)/16)/25% 25%,
+    radial-gradient(farthest-side at top   ,var(--_g)) 50%  calc(50% + var(--s)/16)/25% 25%,
+    radial-gradient(farthest-side at bottom,var(--_g)) 100% calc(50% - var(--s)/16)/25% 25%,
+    radial-gradient(farthest-side at top   ,var(--_g)) 100% calc(50% + var(--s)/16)/25% 25%;
+  background-repeat: no-repeat;
+  animation: l14 1s infinite;
+  margin-top: 24px;
+}
+
+@keyframes l14 {
+  25%  {background-position:0 50%,50% 0,50% 100%,100% 0,100% 100%}
+  50%  {background-position:100% 50%,0 0,0 100%,50% 0,50% 100%}
+  75%,
+  100% {background-position:100% 50%,0 calc(50% - var(--s)/16),0 calc(50% + var(--s)/16),50% calc(50% - var(--s)/16),50% calc(50% + var(--s)/16)}
+}

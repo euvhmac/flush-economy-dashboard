@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<header class="header">
+  <img src="{{ url_for('static', filename='images/logo-flush.webp') }}" alt="Flush Roleplay" class="logo-flush">
+</header>
+<div class="container">
+  <h1>Bem-vindo ao Flush Dashboard</h1>
+  <p>Tenha a economia da cidade na palma da sua mão.</p>
+
+  <form action="/loading" method="POST" enctype="multipart/form-data">
+    <label class="upload-btn" for="fileInput">Selecionar arquivo</label>
+    <input type="file" name="file" id="fileInput" required onchange="this.form.submit()">
+  </form>
+</div>
+{% endblock %}

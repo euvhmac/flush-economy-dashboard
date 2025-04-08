@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Flush Dashboard</title>
+
+  <!-- Fonte Inter (estilo mais moderno e clean) -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+
+  <!-- Estilo principal -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+<!-- Primeiro o app.js, sem defer -->
+<script src="{{ url_for('static', filename='js/app.js') }}"></script>
+
+<!-- Depois o Alpine, com defer -->
+<script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+
+</head>
+<body>
+  {% block content %}{% endblock %}
+</body>
+</html>

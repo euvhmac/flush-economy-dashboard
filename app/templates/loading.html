@@ -1,0 +1,9 @@
+{% extends "base.html" %}
+{% block content %}
+<div x-data="loader()" x-init="simulateProgress()" class="main-wrapper">
+  <div class="loader-screen fade-in">
+    <p x-text="loadingText" class="loading-text"></p>
+    <div class="loader"></div>
+  </div>
+</div>
+{% endblock %}

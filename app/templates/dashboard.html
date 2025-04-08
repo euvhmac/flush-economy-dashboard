@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="dashboard-wrapper" x-data="dashboard()" x-init="fetchMetrics()">
+  <h1 class="dashboard-title">Painel de Indicadores</h1>
+
+  <div class="metrics-grid">
+    <template x-for="metric in metrics" :key="metric.label">
+      <div class="metric-card">
+        <p class="metric-label" x-text="metric.label"></p>
+        <p class="metric-value" x-text="metric.value"></p>
+      </div>
+    </template>
+  </div>
+</div>
+{% endblock %}
